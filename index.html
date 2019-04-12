@@ -3,17 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <title>index</title>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 </head>
 <body>
 <div>首页</div>
-<button onclick="start()">proxy</button>
+<button onclick="test()">proxy1</button>
+<button onclick="doing()">proxy2</button>
 <script>
-    var node = document.createElement('script');
-    node.src = 'https://unpkg.com/axios/dist/axios.min.js';
-    document.head.appendChild(node);
-
-    function start() {
+    function test() {
         axios.get('http://127.0.0.1:3000/proxy/test').then(response => {
+            console.log(response.data)
+        }).catch(err => {
+            console.log(err)
+        })
+    }
+
+    function doing() {
+        axios.get('http://127.0.0.1:3000/proxy/doing').then(response => {
             console.log(response.data)
         }).catch(err => {
             console.log(err)

@@ -17,7 +17,6 @@ var server = http.createServer(function (request, response) {
     }
 
     if(pathname.includes('/proxy')){
-        request.url=request.url.split('proxy')[1]
         proxy.web(request, response, { target: 'http://127.0.0.1:3001' })
     }
 })

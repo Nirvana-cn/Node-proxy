@@ -14,9 +14,16 @@ var server = http.createServer(function (request, response) {
         })
     }
 
-    if(pathname==='/test'){
+    if(pathname==='/proxy/test'){
         response.writeHead(200, {'Content-Type': 'text/plain'})
         response.end('ok', 'utf-8')
+        console.log('response success')
+    }
+
+    if(pathname==='/proxy/doing'){
+        response.writeHead(200, {'Content-Type': 'text/plain'})
+        response.end('doing', 'utf-8')
+        console.log('response success')
     }
 });
 server.listen(PORT);
